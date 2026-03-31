@@ -1,0 +1,214 @@
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+img{max-width:100%;}
+body{font-family:Arial,sans-serif;}
+
+.hw-wrap{
+  max-width:750px;
+  margin:0 auto;
+  background:#0a0a0a;
+  color:#fff;
+  overflow:hidden;
+}
+
+/* HERO — racing background feel */
+.hw-hero{
+  background:
+    linear-gradient(180deg, rgba(0,0,0,.7) 0%, rgba(0,0,0,.4) 40%, rgba(0,0,0,.85) 100%),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 40px,
+      rgba(200,0,0,.15) 40px,
+      rgba(200,0,0,.15) 42px
+    ),
+    linear-gradient(135deg, #1a0000 0%, #0d0d0d 40%, #001a33 100%);
+  padding:28px 20px 20px;
+  text-align:center;
+  border-bottom:3px solid #cc0000;
+  position:relative;
+}
+
+/* Speed lines */
+.hw-hero::before{
+  content:'';
+  position:absolute;
+  top:0;left:0;right:0;bottom:0;
+  background:repeating-linear-gradient(
+    175deg,
+    transparent,
+    transparent 60px,
+    rgba(255,100,0,.04) 60px,
+    rgba(255,100,0,.04) 61px
+  );
+  pointer-events:none;
+}
+
+.hw-brand{
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:5px;
+  color:#ff6600;
+  text-transform:uppercase;
+  margin-bottom:8px;
+  opacity:.9;
+}
+
+.hw-title{
+  font-size:20px;
+  font-weight:900;
+  color:#ffffff;
+  text-transform:uppercase;
+  letter-spacing:1.5px;
+  line-height:1.25;
+  text-shadow:0 0 20px rgba(204,0,0,.5);
+}
+
+/* MAIN IMAGE */
+.hw-img{
+  background:#111;
+  text-align:center;
+  padding:8px;
+  border-bottom:2px solid #1a1a1a;
+}
+.hw-img img{
+  max-height:380px;
+  width:100%;
+  object-fit:contain;
+}
+
+/* DESCRIPTION BLOCK */
+.hw-desc-wrap{
+  padding:20px;
+  background:#111;
+  border-bottom:1px solid #222;
+}
+
+.hw-section-label{
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:3px;
+  color:#ff6600;
+  text-transform:uppercase;
+  margin-bottom:10px;
+}
+
+.hw-desc-default{
+  font-size:13px;
+  color:#ccc;
+  line-height:1.8;
+  margin-bottom:16px;
+}
+
+.hw-desc-custom{
+  font-size:13px;
+  color:#ddd;
+  line-height:1.8;
+  border-top:1px solid #222;
+  padding-top:14px;
+}
+
+/* SPECS STRIP */
+.hw-specs{
+  display:flex;
+  background:#0d0d0d;
+  border-top:1px solid #222;
+  border-bottom:1px solid #222;
+}
+.hw-spec{
+  flex:1;
+  padding:12px 8px;
+  text-align:center;
+  border-right:1px solid #222;
+}
+.hw-spec:last-child{border-right:none;}
+.hw-spec-val{
+  font-size:13px;
+  font-weight:700;
+  color:#ff6600;
+  margin-bottom:3px;
+}
+.hw-spec-lbl{
+  font-size:9px;
+  color:#666;
+  text-transform:uppercase;
+  letter-spacing:.8px;
+}
+
+/* FOOTER */
+.hw-foot{
+  background:#0a0a0a;
+  padding:14px 20px;
+  text-align:center;
+  border-top:2px solid #cc0000;
+}
+.hw-foot-store{
+  font-size:12px;
+  font-weight:700;
+  color:#ff6600;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  margin-bottom:3px;
+}
+.hw-foot-note{
+  font-size:11px;
+  color:#444;
+}
+</style>
+
+<div class="hw-wrap">
+
+  <!-- HERO -->
+  <div class="hw-hero">
+    <div class="hw-brand">Hot Wheels · Die-Cast 1:64</div>
+    <div class="hw-title">{title}</div>
+  </div>
+
+  <!-- MAIN PHOTO — auto from your eBay listing -->
+  <div class="hw-img">
+    <img src="{image[0]}" alt="{title}">
+  </div>
+
+  <!-- DESCRIPTION -->
+  <div class="hw-desc-wrap">
+    <div class="hw-section-label">About this item</div>
+
+    <!-- Default Hot Wheels description — applies to any car -->
+    <div class="hw-desc-default">
+      This is a genuine <strong>Hot Wheels</strong> 1:64 scale die-cast vehicle. 
+      Crafted with precision detail and vibrant finish, this collectible is perfect 
+      for display, play, or adding to your collection. A great find for Hot Wheels 
+      enthusiasts of all ages — from casual collectors to serious hobbyists.
+    </div>
+
+    <!-- Your existing eBay description drops here automatically -->
+    <div class="hw-desc-custom">{description}</div>
+  </div>
+
+  <!-- SPECS -->
+  <div class="hw-specs">
+    <div class="hw-spec">
+      <div class="hw-spec-val">1:64</div>
+      <div class="hw-spec-lbl">Scale</div>
+    </div>
+    <div class="hw-spec">
+      <div class="hw-spec-val">Die-Cast</div>
+      <div class="hw-spec-lbl">Material</div>
+    </div>
+    <div class="hw-spec">
+      <div class="hw-spec-val">Worldwide</div>
+      <div class="hw-spec-lbl">Ships To</div>
+    </div>
+    <div class="hw-spec">
+      <div class="hw-spec-val">1 Day</div>
+      <div class="hw-spec-lbl">Handling</div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="hw-foot">
+    <div class="hw-foot-store">CollectibleThang</div>
+    <div class="hw-foot-note">Packaged with care · Combined shipping available</div>
+  </div>
+
+</div>
